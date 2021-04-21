@@ -1,4 +1,7 @@
 import java.util.Scanner;
+import java.util.LinkedHashMap;
+import java.util.HashMap;
+import java.util.Collections;
 
 public class Question5
 {
@@ -25,8 +28,39 @@ public class Question5
      *     2
      * Hint: Use a loop to get input. Use another 2 loops to find the mode
      */
-     
-    Scanner in = new Scanner(System.in);
     
+    System.out.print("Number of integers to input: ");
+    Scanner in = new Scanner(System.in);
+    int noOfInt = in.nextInt();
+
+    LinkedHashMap<Integer, Integer> numbers = new LinkedHashMap<>();
+    for (int i = 0; i < noOfInt; ++i) {
+      System.out.print("> ");
+      in = new Scanner(System.in);
+      int n = in.nextInt();
+
+      if (numbers.containsKey(n)) {
+        numbers.replace(n, numbers.get(n) + 1);
+      } else {
+        numbers.put(n, 1);
+      }
+    }
+
+    int max = Collections.max(numbers.values());
+    int mode = 0;
+
+    // for (int key : numbers.keySet()) {
+    for (HashMap.Entry<Integer, Integer> entry : numbers.entrySet()) {
+      if (entry.getValue() == max) {
+        mode = entry.getKey();
+        break;
+      }
+      // int val = numbers.get(key);
+      // if (val == max) {
+      //   mode = key;
+      //   break;
+      // }
+    }
+    System.out.println("Mode: " + mode);
   }
 }
