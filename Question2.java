@@ -15,10 +15,10 @@ public class Question2
     double height = in.nextDouble();
     
     System.out.print("Weight (kg): ");
-    in = new Scanner(System.in);
-    double weight = in.nextDouble();
+    Scanner in2 = new Scanner(System.in);
+    double weight = in2.nextDouble();
 
     double bmi = weight / height / height;
-    System.out.format("%.1f\n", bmi);
+    System.out.format("%f\n", bmi);
   }
 }
