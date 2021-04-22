@@ -34,7 +34,6 @@ public class Question5
 
     LinkedHashMap<Integer, Integer> numbers = new LinkedHashMap<>();
     for (int i = 0; i < noOfInt; ++i) {
-      System.out.print("> ");
       int n = in.nextInt();
 
       if (numbers.containsKey(n)) {
