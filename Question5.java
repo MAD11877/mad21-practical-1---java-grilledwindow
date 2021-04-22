@@ -29,14 +29,12 @@ public class Question5
      * Hint: Use a loop to get input. Use another 2 loops to find the mode
      */
     
-    System.out.print("Number of integers to input: ");
     Scanner in = new Scanner(System.in);
     int noOfInt = in.nextInt();
 
     LinkedHashMap<Integer, Integer> numbers = new LinkedHashMap<>();
     for (int i = 0; i < noOfInt; ++i) {
       System.out.print("> ");
-      in = new Scanner(System.in);
       int n = in.nextInt();
 
       if (numbers.containsKey(n)) {
@@ -55,12 +53,7 @@ public class Question5
         mode = entry.getKey();
         break;
       }
-      // int val = numbers.get(key);
-      // if (val == max) {
-      //   mode = key;
-      //   break;
-      // }
     }
-    System.out.println("Mode: " + mode);
+    System.out.println(mode);
   }
 }
